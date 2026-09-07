@@ -1,0 +1,13 @@
+{
+  "artboards": [
+    { "file": "Onboarding.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "title": "1 · Onboarding" },
+    { "file": "Main.dc.html", "x": 470, "y": 0, "w": 390, "h": 844, "title": "2 · Home" },
+    { "file": "NewEntry.dc.html", "x": 940, "y": 0, "w": 390, "h": 844, "title": "3 · New Entry" },
+    { "file": "EntryDetail.dc.html", "x": 1410, "y": 0, "w": 390, "h": 844, "title": "4 · Entry Detail" },
+    { "file": "Settings.dc.html", "x": 1880, "y": 0, "w": 390, "h": 844, "title": "5 · Settings" }
+  ],
+  "annotations": [
+    { "id": "brief-summary", "x": 0, "y": -160, "w": 780, "text": "JournAI — iOS journaling app, first design pass\nWarm, calm, personal — not clinical. Serif headlines (Source Serif 4) + system UI sans. One accent: warm terracotta.\nStatic high-fidelity mockups for review — not yet wired up or interactive." }
+  ],
+  "launch": { "view": "canvas" }
+}
