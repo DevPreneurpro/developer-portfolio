@@ -10,6 +10,15 @@
 		0123456789ABCDEF00000010 /* JournAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000000D /* JournAIApp.swift */; };
 		0123456789ABCDEF00000011 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000000E /* OnboardingView.swift */; };
 		0123456789ABCDEF00000012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000000F /* Assets.xcassets */; };
+		0123456789ABCDEF0000001F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF00000016 /* RootView.swift */; };
+		0123456789ABCDEF00000020 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF00000017 /* MainTabView.swift */; };
+		0123456789ABCDEF00000021 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF00000018 /* HomeView.swift */; };
+		0123456789ABCDEF00000022 /* NewEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF00000019 /* NewEntryView.swift */; };
+		0123456789ABCDEF00000023 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001A /* EntryDetailView.swift */; };
+		0123456789ABCDEF00000024 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001B /* SettingsView.swift */; };
+		0123456789ABCDEF00000025 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001C /* JournalEntry.swift */; };
+		0123456789ABCDEF00000026 /* AICompanionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001D /* AICompanionService.swift */; };
+		0123456789ABCDEF00000027 /* MoodFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001E /* MoodFaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +26,15 @@
 		0123456789ABCDEF0000000D /* JournAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournAIApp.swift; sourceTree = "<group>"; };
 		0123456789ABCDEF0000000E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0123456789ABCDEF0000000F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0123456789ABCDEF00000016 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF00000017 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF00000018 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF00000019 /* NewEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000001A /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000001B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000001C /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000001D /* AICompanionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICompanionService.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000001E /* MoodFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodFaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +68,16 @@
 			isa = PBXGroup;
 			children = (
 				0123456789ABCDEF0000000D /* JournAIApp.swift */,
+				0123456789ABCDEF00000016 /* RootView.swift */,
 				0123456789ABCDEF0000000E /* OnboardingView.swift */,
+				0123456789ABCDEF00000017 /* MainTabView.swift */,
+				0123456789ABCDEF00000018 /* HomeView.swift */,
+				0123456789ABCDEF00000019 /* NewEntryView.swift */,
+				0123456789ABCDEF0000001A /* EntryDetailView.swift */,
+				0123456789ABCDEF0000001B /* SettingsView.swift */,
+				0123456789ABCDEF0000001E /* MoodFaceView.swift */,
+				0123456789ABCDEF0000001C /* JournalEntry.swift */,
+				0123456789ABCDEF0000001D /* AICompanionService.swift */,
 				0123456789ABCDEF0000000F /* Assets.xcassets */,
 			);
 			path = JournAI;
@@ -126,7 +153,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0123456789ABCDEF00000010 /* JournAIApp.swift in Sources */,
+				0123456789ABCDEF0000001F /* RootView.swift in Sources */,
 				0123456789ABCDEF00000011 /* OnboardingView.swift in Sources */,
+				0123456789ABCDEF00000020 /* MainTabView.swift in Sources */,
+				0123456789ABCDEF00000021 /* HomeView.swift in Sources */,
+				0123456789ABCDEF00000022 /* NewEntryView.swift in Sources */,
+				0123456789ABCDEF00000023 /* EntryDetailView.swift in Sources */,
+				0123456789ABCDEF00000024 /* SettingsView.swift in Sources */,
+				0123456789ABCDEF00000025 /* JournalEntry.swift in Sources */,
+				0123456789ABCDEF00000026 /* AICompanionService.swift in Sources */,
+				0123456789ABCDEF00000027 /* MoodFaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

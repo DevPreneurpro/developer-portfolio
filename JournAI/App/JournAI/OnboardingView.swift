@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+
     var body: some View {
         ZStack {
             Color("JournalBackground")
@@ -53,7 +55,8 @@ struct OnboardingView: View {
 
                 VStack(spacing: 12) {
                     Button {
-                        // TODO: wire up Sign in with Apple
+                        // TODO: replace with real Sign in with Apple once there's a backend
+                        hasCompletedOnboarding = true
                     } label: {
                         HStack(spacing: 8) {
                             Image(systemName: "apple.logo")
@@ -68,7 +71,8 @@ struct OnboardingView: View {
                     .clipShape(Capsule())
 
                     Button {
-                        // TODO: navigate to email sign-in
+                        // TODO: replace with a real email sign-in flow
+                        hasCompletedOnboarding = true
                     } label: {
                         Text("Continue with Email")
                             .fontWeight(.medium)
@@ -84,7 +88,7 @@ struct OnboardingView: View {
                         Text("Already journaling with us?")
                             .foregroundColor(Color("JournalInkSoft"))
                         Button("Sign in") {
-                            // TODO: navigate to sign-in
+                            hasCompletedOnboarding = true
                         }
                         .fontWeight(.semibold)
                         .foregroundColor(Color("JournalAccentDark"))

@@ -1,10 +1,12 @@
 import SwiftUI
+import SwiftData
 
 @main
 struct JournAIApp: App {
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            RootView()
         }
+        .modelContainer(for: JournalEntry.self)
     }
 }
