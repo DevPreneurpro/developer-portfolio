@@ -1,0 +1,29 @@
+.app-shell-backdrop {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #ece4d8;
+}
+
+.app-shell {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .app-shell-backdrop {
+    align-items: center;
+    padding: 40px 16px;
+  }
+
+  .app-shell {
+    min-height: min(900px, calc(100vh - 80px));
+    height: min(900px, calc(100vh - 80px));
+    border-radius: 32px;
+    box-shadow: 0 24px 60px rgba(43, 36, 31, 0.18);
+  }
+}

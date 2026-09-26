@@ -1,0 +1,90 @@
+.onboarding {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.onboarding__glow {
+  position: absolute;
+  top: -90px;
+  left: -60px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(193, 103, 62, 0.16) 0%, rgba(193, 103, 62, 0) 70%);
+}
+
+.onboarding__content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 88px 24px 40px;
+}
+
+.onboarding__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 64px;
+}
+
+.onboarding__mark {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--accent-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onboarding__wordmark {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--ink);
+  text-align: center;
+}
+
+.onboarding__wordmark span {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.onboarding__tagline {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.onboarding__actions {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.onboarding__signin {
+  text-align: center;
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.onboarding__legal {
+  text-align: center;
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--ink-faint);
+  line-height: 1.5;
+}
