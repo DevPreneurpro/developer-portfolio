@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AppShell from './components/AppShell.jsx'
 import { useLocalStorageState } from './lib/storage.js'
+import { ONBOARDING_KEY } from './lib/session.js'
 import OnboardingScreen from './screens/OnboardingScreen.jsx'
 import HomeScreen from './screens/HomeScreen.jsx'
 import NewEntryScreen from './screens/NewEntryScreen.jsx'
@@ -9,7 +10,7 @@ import SettingsScreen from './screens/SettingsScreen.jsx'
 import './App.css'
 
 export default function App() {
-  const [hasCompletedOnboarding] = useLocalStorageState('journai.hasCompletedOnboarding', false)
+  const [hasCompletedOnboarding] = useLocalStorageState(ONBOARDING_KEY, false)
 
   return (
     <AppShell>

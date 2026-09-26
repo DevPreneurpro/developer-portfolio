@@ -4,6 +4,8 @@ import MoodFace from '../components/MoodFace.jsx'
 import TabBar from '../components/TabBar.jsx'
 import { MOODS } from '../lib/moods.js'
 import { useJournalEntries } from '../lib/useJournalEntries.js'
+import { useLocalStorageState } from '../lib/storage.js'
+import { CURRENT_USER_KEY, displayNameFromEmail } from '../lib/session.js'
 import './HomeScreen.css'
 
 function greeting() {
@@ -17,6 +19,8 @@ export default function HomeScreen() {
   const navigate = useNavigate()
   const { entries, streak } = useJournalEntries()
   const [selectedMood, setSelectedMood] = useState(null)
+  const [currentUserEmail] = useLocalStorageState(CURRENT_USER_KEY, null)
+  const displayName = displayNameFromEmail(currentUserEmail)
 
   const today = new Date().toLocaleDateString(undefined, {
     weekday: 'short',
@@ -30,9 +34,9 @@ export default function HomeScreen() {
         <header className="home__header">
           <div>
             <div className="home__greeting">{greeting().toUpperCase()}</div>
-            <h1 className="home__name">Alex</h1>
+            <h1 className="home__name">{displayName}</h1>
           </div>
-          <div className="home__avatar">A</div>
+          <div className="home__avatar">{displayName[0]?.toUpperCase() ?? '?'}</div>
         </header>
 
         <div className="home__streak-row">

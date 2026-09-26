@@ -88,3 +88,53 @@
   color: var(--ink-faint);
   line-height: 1.5;
 }
+
+.onboarding__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.onboarding__back {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.onboarding__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.onboarding__field input {
+  height: 50px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  padding: 0 16px;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.onboarding__field input:focus {
+  outline: 2px solid var(--accent-tint);
+  outline-offset: -1px;
+  border-color: var(--accent);
+}
+
+.onboarding__error {
+  margin: 0;
+  font-size: 13px;
+  color: var(--danger);
+}

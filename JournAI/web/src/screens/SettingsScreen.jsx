@@ -4,19 +4,24 @@ import TabBar from '../components/TabBar.jsx'
 import { useLocalStorageState } from '../lib/storage.js'
 import { useJournalEntries } from '../lib/useJournalEntries.js'
 import { PERSONALITIES, useSettings } from '../lib/useSettings.js'
+import { CURRENT_USER_KEY, ONBOARDING_KEY, displayNameFromEmail } from '../lib/session.js'
 import './SettingsScreen.css'
 
 export default function SettingsScreen() {
   const navigate = useNavigate()
   const [settings, updateSettings] = useSettings()
   const { entries, deleteAll } = useJournalEntries()
-  const [, setHasCompletedOnboarding] = useLocalStorageState('journai.hasCompletedOnboarding', false)
+  const [, setHasCompletedOnboarding] = useLocalStorageState(ONBOARDING_KEY, false)
+  const [currentUserEmail, setCurrentUserEmail] = useLocalStorageState(CURRENT_USER_KEY, null)
   const [confirmingDeleteAll, setConfirmingDeleteAll] = useState(false)
 
   function signOut() {
     setHasCompletedOnboarding(false)
+    setCurrentUserEmail(null)
     navigate('/onboarding', { replace: true })
   }
+
+  const displayName = displayNameFromEmail(currentUserEmail)
 
   return (
     <div className="screen">
@@ -24,10 +29,10 @@ export default function SettingsScreen() {
         <h1 className="settings__title">Settings</h1>
 
         <div className="card settings__account">
-          <div className="settings__avatar">A</div>
+          <div className="settings__avatar">{displayName[0]?.toUpperCase() ?? '?'}</div>
           <div>
-            <div className="settings__account-name">Alex Rivera</div>
-            <div className="settings__account-email">alex.rivera@icloud.com</div>
+            <div className="settings__account-name">{displayName}</div>
+            <div className="settings__account-email">{currentUserEmail ?? 'Signed in with Apple'}</div>
           </div>
         </div>
 
