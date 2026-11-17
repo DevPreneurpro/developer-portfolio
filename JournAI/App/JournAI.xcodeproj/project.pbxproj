@@ -19,6 +19,13 @@
 		0123456789ABCDEF00000025 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001C /* JournalEntry.swift */; };
 		0123456789ABCDEF00000026 /* AICompanionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001D /* AICompanionService.swift */; };
 		0123456789ABCDEF00000027 /* MoodFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000001E /* MoodFaceView.swift */; };
+		0123456789ABCDEF0000002F /* BackendConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF00000028 /* BackendConfig.swift */; };
+		0123456789ABCDEF00000030 /* BackendCompanionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF00000029 /* BackendCompanionService.swift */; };
+		0123456789ABCDEF00000031 /* CompanionAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000002A /* CompanionAppearance.swift */; };
+		0123456789ABCDEF00000032 /* CompanionAppearanceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000002B /* CompanionAppearanceStore.swift */; };
+		0123456789ABCDEF00000033 /* CompanionAvatarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000002C /* CompanionAvatarService.swift */; };
+		0123456789ABCDEF00000034 /* CompanionAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000002D /* CompanionAvatarView.swift */; };
+		0123456789ABCDEF00000035 /* CompanionAppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0123456789ABCDEF0000002E /* CompanionAppearanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,13 @@
 		0123456789ABCDEF0000001C /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		0123456789ABCDEF0000001D /* AICompanionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICompanionService.swift; sourceTree = "<group>"; };
 		0123456789ABCDEF0000001E /* MoodFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodFaceView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF00000028 /* BackendConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendConfig.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF00000029 /* BackendCompanionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendCompanionService.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000002A /* CompanionAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAppearance.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000002B /* CompanionAppearanceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAppearanceStore.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000002C /* CompanionAvatarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAvatarService.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000002D /* CompanionAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAvatarView.swift; sourceTree = "<group>"; };
+		0123456789ABCDEF0000002E /* CompanionAppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionAppearanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,13 @@
 				0123456789ABCDEF0000001E /* MoodFaceView.swift */,
 				0123456789ABCDEF0000001C /* JournalEntry.swift */,
 				0123456789ABCDEF0000001D /* AICompanionService.swift */,
+				0123456789ABCDEF00000028 /* BackendConfig.swift */,
+				0123456789ABCDEF00000029 /* BackendCompanionService.swift */,
+				0123456789ABCDEF0000002A /* CompanionAppearance.swift */,
+				0123456789ABCDEF0000002B /* CompanionAppearanceStore.swift */,
+				0123456789ABCDEF0000002C /* CompanionAvatarService.swift */,
+				0123456789ABCDEF0000002D /* CompanionAvatarView.swift */,
+				0123456789ABCDEF0000002E /* CompanionAppearanceView.swift */,
 				0123456789ABCDEF0000000F /* Assets.xcassets */,
 			);
 			path = JournAI;
@@ -163,6 +184,13 @@
 				0123456789ABCDEF00000025 /* JournalEntry.swift in Sources */,
 				0123456789ABCDEF00000026 /* AICompanionService.swift in Sources */,
 				0123456789ABCDEF00000027 /* MoodFaceView.swift in Sources */,
+				0123456789ABCDEF0000002F /* BackendConfig.swift in Sources */,
+				0123456789ABCDEF00000030 /* BackendCompanionService.swift in Sources */,
+				0123456789ABCDEF00000031 /* CompanionAppearance.swift in Sources */,
+				0123456789ABCDEF00000032 /* CompanionAppearanceStore.swift in Sources */,
+				0123456789ABCDEF00000033 /* CompanionAvatarService.swift in Sources */,
+				0123456789ABCDEF00000034 /* CompanionAvatarView.swift in Sources */,
+				0123456789ABCDEF00000035 /* CompanionAppearanceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

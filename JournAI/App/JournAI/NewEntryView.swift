@@ -10,7 +10,7 @@ struct NewEntryView: View {
     @State private var isThinking = false
     @State private var isSaving = false
 
-    private let service: AICompanionService = MockAICompanionService()
+    private let service: AICompanionService = BackendCompanionService()
 
     private var userText: String {
         messages
@@ -59,12 +59,7 @@ struct NewEntryView: View {
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(Color("JournalInk"))
             }
-            ZStack {
-                Circle().fill(Color("JournalAccentTint")).frame(width: 32, height: 32)
-                Image(systemName: "sparkles")
-                    .font(.system(size: 13))
-                    .foregroundColor(Color("JournalAccentDark"))
-            }
+            CompanionAvatarView(isTalking: isThinking, size: 32)
             VStack(alignment: .leading, spacing: 0) {
                 Text("Sage")
                     .font(.system(size: 15, weight: .semibold))

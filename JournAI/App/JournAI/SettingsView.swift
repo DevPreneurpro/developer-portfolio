@@ -38,6 +38,14 @@ struct SettingsView: View {
                     accountCard
 
                     settingsSection(title: "AI COMPANION") {
+                        NavigationLink {
+                            CompanionAppearanceView()
+                        } label: {
+                            settingsRow(label: "Companion's Look") {
+                                CompanionAvatarView(size: 28)
+                            }
+                        }
+                        rowDivider
                         settingsRow(label: "Companion Name") {
                             TextField("Name", text: $companionName)
                                 .multilineTextAlignment(.trailing)
