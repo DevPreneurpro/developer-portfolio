@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import Anthropic from '@anthropic-ai/sdk'
+import * as higgsfield from './higgsfield.js'
 
 // This is the ONLY place the Anthropic API key is ever read or used.
 // It lives in process.env (from .env, which is gitignored) and never
@@ -31,7 +32,7 @@ function firstText(content) {
 }
 
 app.get('/api/health', (_req, res) => {
-  res.json({ configured: Boolean(anthropic) })
+  res.json({ configured: Boolean(anthropic), higgsfieldConfigured: higgsfield.isConfigured() })
 })
 
 const companionSystemPrompt = (name, personality) => `You are ${name}, a warm, ${String(
@@ -123,11 +124,90 @@ app.post('/api/companion/reflect', async (req, res) => {
   }
 })
 
+function requireHiggsfield(res) {
+  if (!higgsfield.isConfigured()) {
+    res.status(503).json({ error: 'HIGGSFIELD_KEY_ID / HIGGSFIELD_KEY_SECRET are not configured on the server' })
+    return false
+  }
+  return true
+}
+
+// Turns a set of picked traits (gender, age, ethnicity, hair, build, style,
+// accessory...) into a plain-English portrait prompt. Accepts whichever
+// trait keys the client sends — unrecognized/empty ones are just skipped.
+function buildAppearancePrompt(traits = {}) {
+  const parts = [
+    traits.age,
+    traits.ethnicity,
+    traits.gender,
+    'portrait photo, warm gentle expression, soft studio lighting, looking at camera',
+    traits.hair && `${traits.hair} hair`,
+    traits.hairColor,
+    traits.eyeColor && `${traits.eyeColor} eyes`,
+    traits.build && `${traits.build} build`,
+    traits.style && `${traits.style}-style clothing`,
+    traits.accessory && traits.accessory !== 'none' && `wearing ${traits.accessory}`,
+  ]
+  return parts.filter(Boolean).join(', ')
+}
+
+app.post('/api/companion/avatar/portrait', async (req, res) => {
+  if (!requireHiggsfield(res)) return
+  try {
+    const { traits, description } = req.body ?? {}
+    const prompt = String(description || buildAppearancePrompt(traits)).trim()
+    if (!prompt) {
+      return res.status(400).json({ error: 'traits or description required' })
+    }
+
+    const imageUrl = await higgsfield.generateImage({ prompt, aspect_ratio: '3:4', quality: '2k' })
+    res.json({ imageUrl })
+  } catch (error) {
+    console.error('POST /api/companion/avatar/portrait failed:', error)
+    res.status(502).json({ error: 'Failed to generate portrait', detail: String(error.message || error) })
+  }
+})
+
+app.post('/api/companion/avatar/clips', async (req, res) => {
+  if (!requireHiggsfield(res)) return
+  try {
+    const { imageUrl } = req.body ?? {}
+    if (!imageUrl) {
+      return res.status(400).json({ error: 'imageUrl required' })
+    }
+
+    const [idleUrl, talkingUrl] = await Promise.all([
+      higgsfield.generateVideo({
+        duration: 5,
+        resolution: '720p',
+        medias: [{ value: imageUrl, role: 'start_image' }],
+        prompt: 'subtle idle breathing motion, gentle blinking, calm warm expression, seamless loop',
+      }),
+      higgsfield.generateVideo({
+        duration: 5,
+        resolution: '720p',
+        medias: [{ value: imageUrl, role: 'start_image' }],
+        prompt: 'gently talking, warm expressive face, mouth moving naturally as if speaking kindly',
+      }),
+    ])
+
+    res.json({ idleUrl, talkingUrl })
+  } catch (error) {
+    console.error('POST /api/companion/avatar/clips failed:', error)
+    res.status(502).json({ error: 'Failed to generate clips', detail: String(error.message || error) })
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`JournAI companion server listening on http://localhost:${PORT}`)
   console.log(
     anthropic
       ? 'ANTHROPIC_API_KEY detected — real Claude replies are enabled.'
       : 'No ANTHROPIC_API_KEY set — copy .env.example to .env and add your key to enable real Claude replies.',
+  )
+  console.log(
+    higgsfield.isConfigured()
+      ? 'HIGGSFIELD_KEY_ID/SECRET detected — avatar generation is enabled.'
+      : 'No Higgsfield key set — avatar portrait/clip endpoints will return 503 until configured.',
   )
 })
